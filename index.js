@@ -185,3 +185,22 @@ firstGameContainer.appendChild(topPledge);
 let secondPledge = document.createElement('p');
 secondPledge.innerHTML = second.name;
 secondGameContainer.appendChild(secondPledge);
+
+// Customization: Search Functionality
+const searchInput = document.getElementById("search");
+
+// filter games whose name includes the term
+function showSearchedGames(query) {
+    const searchTerm = query.toLowerCase();
+    const filteredGames = GAMES_JSON.filter(game =>
+        game.name.toLowerCase().includes(searchTerm)
+    );
+
+    // clear existing games and display filtered ones
+    deleteChildElements(gamesContainer);
+    addGamesToPage(filteredGames);
+}
+
+searchInput.addEventListener("input", (event) => {
+    showSearchedGames(event.target.value);
+});
