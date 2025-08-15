@@ -186,7 +186,7 @@ let secondPledge = document.createElement('p');
 secondPledge.innerHTML = second.name;
 secondGameContainer.appendChild(secondPledge);
 
-// Customization: Search Functionality
+/*** Customization: Search Functionality ***/
 const searchInput = document.getElementById("search");
 
 // filter games whose name includes the term
